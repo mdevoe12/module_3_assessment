@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 13 Sep 2017 17:54:40 GMT
+      - Wed, 13 Sep 2017 17:58:00 GMT
       Server:
       - Best Buy Public APIs
       X-Cache-Hit:
@@ -53,5 +53,5 @@ http_interactions:
         Box","longName":"Southglenn","city":"Centennial","phone":"303-797-3246","distance":11.02}],"warnings":"Distances
         are in terms of miles (default)"}'
     http_version: 
-  recorded_at: Wed, 13 Sep 2017 17:52:57 GMT
+  recorded_at: Wed, 13 Sep 2017 18:00:56 GMT
 recorded_with: VCR 3.0.3
