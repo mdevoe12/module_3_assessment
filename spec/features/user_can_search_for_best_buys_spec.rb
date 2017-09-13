@@ -10,6 +10,7 @@ RSpec.feature "a user can see a list of best buy stores" do
     click_on "Search"
 
     expect(current_path).to eq(search_index_path)
+    expect(page).to have_content("total stores near you")
 # Then my current path should be "/search" (ignoring params)
 # And I should see stores within 25 miles of 80202
 # And I should see a message that says "17 Total Stores"

@@ -1,1 +1,15 @@
 <h1>Search Results</h1>
+
+<%= "There are #{@stores.count} total stores near you." %>
+
+<% @stores.each do |store| %>
+<div class="store">
+  <ul>
+    <li><%= store.name %></li>
+    <li><%= store.city %></li>
+    <li><%= store.distance %></li>
+    <li><%= store.phone %></li>
+    <li><%= store.type %></li>
+  </ul>
+</div>
+<% end %>
