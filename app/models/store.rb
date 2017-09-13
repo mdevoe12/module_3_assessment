@@ -16,10 +16,7 @@ class Store
 
 
   def self.find_stores(zip)
-    @conn = Faraday.new(url: "https://api.bestbuy.com")
-    response = @conn.get("/v1/stores(area(#{zip},25))?format=json&show=storeType,longName,city,phone,distance&apiKey=#{ENV['bb_key']}")
-    result = JSON.parse(response.body, symbolize_names: :true)[:stores]
-    result.map do |raw_stores|
+    result = BestBuyService.find_by_zip(zip).map do |raw_stores|
       Store.new(raw_stores)
     end
   end
