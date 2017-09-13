@@ -11,7 +11,7 @@ class Store
     @city     = info[:city]
     @distance = info[:distance]
     @phone    = info[:phone]
-    @type     = info[:type]
+    @type     = info[:storeType]
   end
 
 

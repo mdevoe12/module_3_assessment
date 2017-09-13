@@ -10,7 +10,7 @@ RSpec.feature "a user can see a list of best buy stores" do
 
       fill_in :search, with: "80202"
       click_on "Search"
-
+      save_and_open_page
       expect(current_path).to eq(search_index_path)
       expect(page).to have_content("total stores near you")
     end
