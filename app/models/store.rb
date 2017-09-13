@@ -16,7 +16,7 @@ class Store
 
 
   def self.find_stores(zip)
-    result = BestBuyService.find_by_zip(zip).map do |raw_stores|
+    BestBuyService.find_by_zip(zip).map do |raw_stores|
       Store.new(raw_stores)
     end
   end
