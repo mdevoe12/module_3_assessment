@@ -11,7 +11,10 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
-    render json: Item.select("id, name, description, image_url").find(params[:id])
+    render json: {
+      status: 200,
+      body: Item.select("id, name, description, image_url").find(params[:id])
+    }, status: 200
   end
 
   def index
