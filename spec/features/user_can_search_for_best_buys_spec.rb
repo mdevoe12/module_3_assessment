@@ -4,7 +4,7 @@ RSpec.feature "a user can see a list of best buy stores" do
   scenario "when they fill in the search bar with a zip" do
     visit root_path
 
-    expect(page).to have_content("Search")
+    expect(page).to have_css(".form-inline")
 
     fill_in :search, with: "80202"
     click_on "Search"
