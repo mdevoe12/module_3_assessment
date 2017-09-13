@@ -14,7 +14,6 @@ class Store
     @type     = info[:storeType]
   end
 
-
   def self.find_stores(zip)
     BestBuyService.find_by_zip(zip).map do |raw_stores|
       Store.new(raw_stores)

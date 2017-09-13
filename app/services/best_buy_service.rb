@@ -5,14 +5,20 @@ class BestBuyService
   end
 
   def self.find_by_zip(zip)
-    # response = connect.get("/v1/stores(area(#{zip},25))?format=json&show=storeType,longName,city,phone,distance&apiKey=#{ENV['bb_key']}")
-    response = connect.get(BestBuyService.find_zip_url(zip))
+    response = connect.get(find_zip_url(zip))
     result = JSON.parse(response.body, symbolize_names: :true)[:stores]
-    # binding.pry
   end
 
   def self.find_zip_url(zip)
-    "/v1/stores(area(#{zip},25))?format=json&show=storeType,longName,city,phone,distance&apiKey=#{ENV['bb_key']}"
+    "/v1/stores(area(#{zip},25))#{search_params}"
+  end
+
+  def self.search_params
+    "?format=json&show=storeType,longName,city,phone,distance&#{api_key}"
+  end
+
+  def self.api_key
+    "&apiKey=#{ENV['bb_key']}"
   end
 
 end
