@@ -8,7 +8,8 @@ RSpec.feature "a user can see a list of best buy stores" do
 
     fill_in :search, with: "80202"
     click_on "Search"
-# And I fill in a search box with "80202" and click "search"
+
+    expect(current_path).to eq(search_index_path)
 # Then my current path should be "/search" (ignoring params)
 # And I should see stores within 25 miles of 80202
 # And I should see a message that says "17 Total Stores"
