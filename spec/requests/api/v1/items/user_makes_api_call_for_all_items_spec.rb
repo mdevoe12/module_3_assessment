@@ -10,11 +10,11 @@ describe 'items api' do
 
     expect(status).to be(200)
     expect(items.count).to eq(2)
-    expect(items[0]["name"]).to eq(Item.first.name)
-    expect(items[0]["description"]).to eq(Item.first.description)
-    expect(items[0]["image_url"]).to eq(Item.first.image_url)
-    expect(items[1]["name"]).to eq(Item.last.name)
-    expect(items[1]["description"]).to eq(Item.last.description)
-    expect(items[1]["image_url"]).to eq(Item.last.image_url)
+    expect(items["body"][0]["name"]).to eq(Item.first.name)
+    expect(items["body"][0]["description"]).to eq(Item.first.description)
+    expect(items["body"][0]["image_url"]).to eq(Item.first.image_url)
+    expect(items["body"][1]["name"]).to eq(Item.last.name)
+    expect(items["body"][1]["description"]).to eq(Item.last.description)
+    expect(items["body"][1]["image_url"]).to eq(Item.last.image_url)
   end
 end

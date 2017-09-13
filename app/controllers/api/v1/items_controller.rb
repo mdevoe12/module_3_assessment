@@ -18,7 +18,10 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def index
-    render json: Item.select("id, name, description, image_url").all
+    render json: {
+      status: 200,
+      body: Item.select("id, name, description, image_url").all
+    }, status: 200
   end
 
   def destroy
