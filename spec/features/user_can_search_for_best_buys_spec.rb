@@ -6,11 +6,14 @@ RSpec.feature "a user can see a list of best buy stores" do
 
     expect(page).to have_css(".form-inline")
 
-    fill_in :search, with: "80202"
-    click_on "Search"
+    VCR.use_cassette("features/user_can_search_for_best_buys_spec.rb") do
 
-    expect(current_path).to eq(search_index_path)
-    expect(page).to have_content("total stores near you")
+      fill_in :search, with: "80202"
+      click_on "Search"
+
+      expect(current_path).to eq(search_index_path)
+      expect(page).to have_content("total stores near you")
+    end
 # Then my current path should be "/search" (ignoring params)
 # And I should see stores within 25 miles of 80202
 # And I should see a message that says "17 Total Stores"
