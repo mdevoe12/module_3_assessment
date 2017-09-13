@@ -10,6 +10,8 @@ describe 'items api' do
 
     post '/api/v1/items', item
 
+    result = JSON.parse(response.body)
+
     expect(status).to be(201)
     expect(Item.count).to eq(1)
   end
